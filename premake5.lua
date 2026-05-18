@@ -18,8 +18,15 @@ project "NVRHI"
     files {
         "include/nvrhi/**.h",
         "include/nvrhi/**.hpp",
-        "src/**.cpp",
-        "src/**.h",
+        "src/*.cpp",
+        "src/*.h",
+        "src/vulkan/**.cpp",
+        "src/vulkan/**.h",
+    }
+
+    removefiles {
+        "src/d3d11/**",
+        "src/d3d12/**"
     }
 
     defines { 
