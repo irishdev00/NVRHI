@@ -9,7 +9,8 @@ project "NVRHI"
 
     includedirs {
         "include",
-        "src"
+        "src",
+        "%{IncludeDir.VulkanSDK}"
     }
     
     externalincludedirs { "include" }
@@ -21,12 +22,16 @@ project "NVRHI"
         "src/**.h",
     }
 
-    defines { "NVRHI_WITH_VALIDATION=1" }
+    defines { 
+        "NVRHI_WITH_VALIDATION=1",
+        "NVRHI_WITH_VULKAN=1",
+        "NVRHI_WITH_D3D11=0",
+        "NVRHI_WITH_D3D12=0"
+    }
 
     filter "system:windows"
         systemversion "latest"
-        links { "dxgi", "d3d12", "d3d11" }
-        defines { "_CRT_SECURE_NO_WARNINGS" }
+        links { "dxgi" }
 
     filter "system:linux"
         pic "On"
