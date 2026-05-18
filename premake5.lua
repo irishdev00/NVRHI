@@ -33,7 +33,9 @@ project "NVRHI"
         "NVRHI_WITH_VALIDATION=1",
         "NVRHI_WITH_VULKAN=1",
         "NVRHI_WITH_D3D11=0",
-        "NVRHI_WITH_D3D12=0"
+        "NVRHI_WITH_D3D12=0",
+        "VK_USE_PLATFORM_WIN32_KHR",
+        "VK_ENABLE_BETA_EXTENSIONS", 
     }
 
     filter "system:windows"
