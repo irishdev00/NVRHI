@@ -3,6 +3,10 @@ project "NVRHI"
     language "C++"
     cppdialect "C++23"
     staticruntime "off"
+    
+    buildstlmodules "On"
+    conformancemode "On"
+    multiprocessorcompile "On"
 
     targetdir ("%{wks.location}/build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("%{wks.location}/build/obj/" .. outputdir .. "/%{prj.name}")
@@ -61,3 +65,5 @@ project "NVRHI"
         runtime "Release"
         symbols "Off"
         optimize "Full"
+
+    filter {}
